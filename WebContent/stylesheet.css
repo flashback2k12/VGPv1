@@ -1,0 +1,43 @@
+@CHARSET "ISO-8859-1";
+/* * { */
+/* 	border: 1px solid black; */
+/* } */
+
+body {
+	width: 700px;
+	height: 500px;
+}
+
+
+table {
+	width: 500px;
+	height:auto;
+	border: 1px solid black;
+}
+
+#t1 {
+	width: 200px;
+	heigth: 400px;
+	margin: 2px;
+	padding: 2px;	
+}
+
+#t2 {
+	width: 400px;
+	heigth: 400px;
+	margin: 2px;
+	padding: 2px;	
+}
+
+th {
+	width: 40px;
+	height: 20px;
+	text-align: left;
+}
+
+#button {
+	width: 60px;
+	height: 20px;
+	text-align: center;
+	border-radius: 3px;
+}
