@@ -1,13 +1,16 @@
 @CHARSET "ISO-8859-1";
-/* * { */
-/* 	border: 1px solid black; */
-/* } */
+* {
+ 	font-family: Courier New, monospace; 
+} 
 
 body {
 	width: 700px;
 	height: 500px;
 }
 
+#hideAccount {
+	display:none; 
+}
 
 table {
 	width: 500px;
@@ -36,8 +39,22 @@ th {
 }
 
 #button {
-	width: 60px;
+	width: 70px;
 	height: 20px;
 	text-align: center;
 	border-radius: 3px;
+}
+
+a:link{
+	text-decoration: none;
+}
+
+a:hover {
+	color: blue;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+a:visited {
+	text-decoration: none;
 }

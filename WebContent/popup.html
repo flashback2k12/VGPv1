@@ -1,31 +1,29 @@
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>New Account</title>
-<link type="text/css" rel="stylesheet" href="stylesheet.css"  />
-<script type="text/javascript" src="script.js"></script>
+<title>Upload File</title>
+<link type="text/css" rel="stylesheet" href="stylesheet.css" />
+<script>
+function updateSize() {
+	  var nBytes = 0,
+	      oFiles = document.getElementById("uploadInput").files,
+	      nFiles = oFiles.length;
+	  for (var nFileId = 0; nFileId < nFiles; nFileId++) {
+	    nBytes += oFiles[nFileId].size;
+	  }
+	}
+</script>
 </head>
 <body>
-<form name="createAccounts">
-	<table>
-	<tr>
-		<th><label>Firma:</label></th>
-		<th><input type="text" name="firma"/></th>
-	</tr>
-	<tr>
-		<th><label>Benutzer:</label></th>
-		<th><input type="text" name="benutzer"/></th>
-	</tr>
-	<tr>
-		<th><label>Name:</label></th>
-		<th><input type="text" name="aName"/></th>
-	</tr>
-	<tr>
-		<th><input type="button" name="newAccount" value="fertig" onclick="processForm()"/>
-		<th><input type="button" name="newAccount" value="close" onclick="document.close"/>
-	</tr>
-	</table>
-</form>
+
+	<p>
+		<input id="uploadInput" type="file" name="myFiles" size="70" onchange="updateSize()" multiple/> 
+	</p>
+	<p>
+		<input type="submit" value="Send file" onClick="alert('UPLOAD ERROR')"/>
+		<input type="button" value="schließen" onClick="window.close()" />
+	</p>
 </body>
 </html>

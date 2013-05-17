@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1"
+    import="kloppeUser.*"%>
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -12,27 +13,28 @@
 <body>
 	<h1>FTP Portal</h1>
 	
-	 
+	<p><input type="button" name="newAccount" value="neuen Account anlegen" onclick="showForm()" /></p>
+	
 	<form name="createAccounts">
-	<table>
+	<table id="hideAccount">
 	<tr>
 		<th><label>Firma:</label></th>
 		<th><input type="text" name="firma"/></th>
+		<th><input type="button" name="newAccountPop" value="anlegen" onclick="processForm()" /></th>
 	</tr>
 	<tr>
 		<th><label>Benutzer:</label></th>
 		<th><input type="text" name="benutzer"/></th>
+		<th><input type="button" name="closeNA" value="schließen" onclick="hideForm()" /></th>
 	</tr>
 	<tr>
 		<th><label>Name:</label></th>
 		<th><input type="text" name="aName"/></th>
 	</tr>
 	</table>
-	
-	<input type="button" name="newAccountPop" id="button" value="new" onclick="return openPopup('popup.html')" />
+	</form>
 	<br/>
 	<br/>
-	
 	<table>
 		<tr>
 			<th>
@@ -41,10 +43,10 @@
 				<th>Accounts</th>
 				</tr>
 				<tr>
-				<th><input type="button" name="newAccount" id="button" value="new" onclick="processForm()" /></th>
+				<th></th>
 				</tr>
 				<tr>
-				<th><div id="accountList"></div>...</th>
+				<th><hr/><div id="accountList"></div>...</th>
 				</tr>
 				</table>
 			</th>
@@ -63,18 +65,22 @@
 				<th>Löschen</th>
 				</tr>
 				<tr>
-				<th><div id="accountContentListID"></div>...</th>
-				<th><div id="accountContentListFirma"></div>...</th>
-				<th><div id="accountContentListBenutzer"></div>...</th>
-				<th><div id="accountContentListAName"></div>...</th>
-				<th><div id="accountContentListUpload"></div>...</th>
-				<th><div id="accountContentListDelete"></div>...</th>
+				<th><hr/><div id="accountContentListID"></div>...</th>
+				<th><hr/><div id="accountContentListFirma"></div>...</th>
+				<th><hr/><div id="accountContentListBenutzer"></div>...</th>
+				<th><hr/><div id="accountContentListAName"></div>...</th>
+				<th><hr/><div id="accountContentListUpload"></div>...</th>
+				<th><hr/><div id="accountContentListDelete"></div>...</th>
 				</tr>
 				</table>
 			</th>
 		</tr>
 	</table>
-	</form>
 	
+<%-- <%
+	AccUser user = new AccUser();
+	String mFirma = request.getParameter("accountContentListID");
+	
+	%>	 --%>
 </body>
 </html>
