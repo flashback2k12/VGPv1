@@ -5,24 +5,15 @@
 <meta charset="ISO-8859-1">
 <title>Upload File</title>
 <link type="text/css" rel="stylesheet" href="stylesheet.css" />
-<script>
-function updateSize() {
-	  var nBytes = 0,
-	      oFiles = document.getElementById("uploadInput").files,
-	      nFiles = oFiles.length;
-	  for (var nFileId = 0; nFileId < nFiles; nFileId++) {
-	    nBytes += oFiles[nFileId].size;
-	  }
-	}
-</script>
+<script type="text/javascript" src="script.js"></script>
 </head>
 <body>
-
+	<!-- Button zum öffnen der Dateiauswahl -->
+	<p><input id="uploadInput" type="file" name="myFiles" size="70" onchange="openFileChooser()" multiple/></p>
 	<p>
-		<input id="uploadInput" type="file" name="myFiles" size="70" onchange="updateSize()" multiple/> 
-	</p>
-	<p>
+		<!-- Send file Button zeigt Error Meldung -->
 		<input type="submit" value="Send file" onClick="alert('UPLOAD ERROR')"/>
+		<!-- schließt das popup-Fenster -->
 		<input type="button" value="schließen" onClick="window.close()" />
 	</p>
 </body>

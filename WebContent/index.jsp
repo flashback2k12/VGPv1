@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"
-    import="kloppeUser.*"%>
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -13,28 +12,34 @@
 <body>
 	<h1>FTP Portal</h1>
 	
+	<!-- Button zum Aufruf der Eingabemaske -->
 	<p><input type="button" name="newAccount" value="neuen Account anlegen" onclick="showForm()" /></p>
 	
-	<form name="createAccounts">
+	<!-- Tabellenform zur Aufnahme der Accountdaten -->
+	<form method="get" id="jq" name="createAccounts" action="InnerAccount.jsp">
 	<table id="hideAccount">
 	<tr>
 		<th><label>Firma:</label></th>
-		<th><input type="text" name="firma"/></th>
-		<th><input type="button" name="newAccountPop" value="anlegen" onclick="processForm()" /></th>
+		<th><input type="text" id="f" name="firma"/></th>
+		<!-- Button für die Übergabe der Accountdaten in die Übersicht-Tabellenform -->
+		<th><input type="button" name="newAccountPop" value="anlegen" onclick="addNewAcc(document.getElementById('f').value,document.getElementById('b').value,document.getElementById('n').value)" /></th>
 	</tr>
 	<tr>
 		<th><label>Benutzer:</label></th>
-		<th><input type="text" name="benutzer"/></th>
+		<th><input type="text" id="b" name="benutzer"/></th>
+		<!-- Button zum schließen der Eingabemaske -->
 		<th><input type="button" name="closeNA" value="schließen" onclick="hideForm()" /></th>
 	</tr>
 	<tr>
 		<th><label>Name:</label></th>
-		<th><input type="text" name="aName"/></th>
+		<th><input type="text" id="n" name="aName"/></th>
 	</tr>
 	</table>
 	</form>
 	<br/>
 	<br/>
+	
+	<!-- Tabellenform zur Übersicht der Accountdaten -->
 	<table>
 		<tr>
 			<th>
@@ -76,11 +81,4 @@
 			</th>
 		</tr>
 	</table>
-	
-<%-- <%
-	AccUser user = new AccUser();
-	String mFirma = request.getParameter("accountContentListID");
-	
-	%>	 --%>
-</body>
 </html>
